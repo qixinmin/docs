@@ -14,3 +14,8 @@ http://hukai.me/android-performance-patterns/
 这些都会导致CPU或者GPU负载过重。
 
 这里有Overdraw的因素，也有可能在逻辑上的不合理，在UI线程中做了不合理的计算，需要具体情况具体分析
+
+##Understanding Overdraw
+Overdraw(过度绘制)描述的是屏幕上的某个像素在同一帧的时间内被绘制了多次。在多层次的UI结构里面，如果不可见的UI也在做绘制的操作，这就会导致某些像素区域被绘制了多次。这就浪费大量的CPU以及GPU资源。
+
+我们可以通过手机设置里面的开发者选项，打开Show GPU Overdraw的选项，可以观察UI上的Overdraw情况
