@@ -21,3 +21,8 @@ Overdraw(过度绘制)描述的是屏幕上的某个像素在同一帧的时间�
 我们可以通过手机设置里面的开发者选项，打开Show GPU Overdraw的选项，可以观察UI上的Overdraw情况
 ![](https://github.com/qixinmin/docs/blob/master/pics/overdraw_options_view.png)
 
+蓝色，淡绿，淡红，深红代表了4种不同程度的Overdraw情况，我们的目标就是尽量减少红色Overdraw，看到更多的蓝色区域。
+
+Overdraw有时候是因为你的UI布局存在大量重叠的部分，还有的时候是因为非必须的重叠背景。例如某个Activity有一个背景，然后里面的Layout又有自己的背景，同时子View又分别有自己的背景。仅仅是通过移除非必须的背景图片，这就能够减少大量的红色Overdraw区域，增加蓝色区域的占比。这一措施能够显著提升程序性能。
+
+优化自己app的例子然后贴出优化后结构 TODO
