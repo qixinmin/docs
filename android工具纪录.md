@@ -20,7 +20,7 @@
 |WireShark	|官网	|配合 Tcpdump 生成打 pcap 文件，进行分析|
 |Fiddler	|官网	|支持对 HTTP 和 HTTPS 两种协议进行抓包，相比 TcpDump 工具，它不需要手机 Root 权限，同时有自带独立的 GUI|
 |Charles	|官网	|和 Fiddler 功能类似，但是 Mac 开发环境下的童鞋，用此工具会胜于 Fiddler|
-|Stetho	|官网	|Facebook研发的安卓APP网络诊断和数据监控的框架，使用教程请戳-->qxm已查看，查看ui结构，db的ui和网络接口，前2个比较实用|
+|Stetho	|官网	|Facebook研发的安卓APP网络诊断和数据监控的框架，使用教程请戳**-->qxm已查看，查看ui结构，db的ui和网络接口，网络监控是在原生app请求的网络都可以在inspector来监控，比较厉害**|
 
 
 #静态代码分析工具
