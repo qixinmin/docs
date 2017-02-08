@@ -29,5 +29,5 @@ Overdraw有时候是因为你的UI布局存在大量重叠的部分，还有的�
 然后进入搜索页面发现一片红
 ![](https://github.com/qixinmin/docs/blob/master/pics/problem.jpg)明显能看出来一片红呀。
 也能清晰的看出其实上后面的内容没有隐藏，导致后面的重绘问题优化后的结果如下：
-!([](https://github.com/qixinmin/docs/blob/master/pics/problem_fix.jpg)效果还是很明显滴，当然后面还有优化的空间
+![](https://github.com/qixinmin/docs/blob/master/pics/problem_fix.jpg)效果还是很明显滴，当然后面还有优化的空间
 
