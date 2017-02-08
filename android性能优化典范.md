@@ -25,12 +25,12 @@ Overdraw(过度绘制)描述的是屏幕上的某个像素在同一帧的时间�
 
 Overdraw有时候是因为你的UI布局存在大量重叠的部分，还有的时候是因为非必须的重叠背景。例如某个Activity有一个背景，然后里面的Layout又有自己的背景，同时子View又分别有自己的背景。仅仅是通过移除非必须的背景图片，这就能够减少大量的红色Overdraw区域，增加蓝色区域的占比。这一措施能够显著提升程序性能。
 已之前做的项目为例：
-<img src="https://github.com/qixinmin/docs/blob/master/pics/home.jpg" width="400" height="400" alt="主页显示"/>
+<img src="https://github.com/qixinmin/docs/blob/master/pics/home.jpg" width="400" height="600" alt="主页显示"/>
 然后进入搜索页面发现一片红
-<img src="https://github.com/qixinmin/docs/blob/master/pics/problem.jpg" width="400" height="400" alt="overdraw出现了"/>
+<img src="https://github.com/qixinmin/docs/blob/master/pics/problem.jpg" width="400" height="600" alt="overdraw出现了"/>
 明显能看出来一片红呀，并且跟主页有关系。
 也能清晰的看出其实上主页的内容没有隐藏，导致后面的重绘问题优化后的结果如下：
-<img src="https://github.com/qixinmin/docs/blob/master/pics/problem_fix.jpg" width="400" height="400" alt="overdraw出现了"/>
+<img src="https://github.com/qixinmin/docs/blob/master/pics/problem_fix.jpg" width="400" height="600" alt="overdraw出现了"/>
 效果还是很明显滴，当然后面还有优化的空间
 
 
