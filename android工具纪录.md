@@ -1,3 +1,8 @@
+
+#杂项
+logcat 分级显示：https://github.com/JakeWharton/pidcat 
+命令行启动：
+pidcat com.browser2345 可以分类显示logcat，如果不加包名，则整个系统都会出来分级’
 #Apk 反编译分析工具
 
 | 工具名称| 下载地址 | 功能简介|
