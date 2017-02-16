@@ -87,9 +87,11 @@ public class TestTryCatch {
     }
 }
 
-```结果如下：
-| Tables        | 正常           | 异常  |
-| ------------- |:-------------:| -----:|
-| iftest| 4ms | 3ms|
-| trytest |3ms |147ms|
+```
+结果如下：
 
+| Tables        | 正常           | 异常 |
+| ------------- |:-------------:| -----:|
+| iftest | 4ms | 3ms |
+| trytest | 3ms |147ms |
+说明
