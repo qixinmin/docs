@@ -88,10 +88,11 @@ public class TestTryCatch {
 }
 
 ```
-结果如下：
+在运行10w次结果如下：
 
 | Tables        | 正常           | 异常 |
 | ------------- |:-------------:| -----:|
 | iftest | 4ms | 3ms |
 | trytest | 3ms |147ms |
-说明
+
+说明正确情况下trycatch的性能还是不错的，可以放心的使用
