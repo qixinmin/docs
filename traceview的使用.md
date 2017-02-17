@@ -1,6 +1,7 @@
 本篇参考网友的资料整理而来，省下摸索的时间 http://blog.csdn.net/u011240877/article/details/54347396
 
 **最近重点关注cpu消耗的优化**
+# traceView
 TraceView 是 Android SDK 中内置的一个工具，它可以加载 trace文件，用图形的形式展示代码的执行时间、次数及调用栈，便于我们分析。<br>
 trace 文件是 log 信息文件的一种，可以通过代码，Android Studio，或者 DDMS 生成。<br>
 
@@ -8,11 +9,14 @@ trace 文件是 log 信息文件的一种，可以通过代码，Android Studio�
 1. 使用代码 <br>
 2. 使用 Android Studio =》使用过程中有点卡顿<br>
 3. 使用 DDMS <br>
-1.使用代码生成 trace 文件
+
+## 使用代码生成 trace 文件
+```
 Debug.startMethodTracing("shixintrace");//开始 trace，保存文件到 "/sdcard/shixintrace.trace"
 // ...
 Debug.stopMethodTracing();//结束
-　　代码很简单，当你调用开始代码的时候，系统会生产 trace 文件，并且产生追踪数据，当你调用结束代码时，会将追踪数据写入到 trace 文件中。
+```
+代码很简单，当你调用开始代码的时候，系统会生产 trace 文件，并且产生追踪数据，当你调用结束代码时，会将追踪数据写入到 trace 文件中。
 　　下一步使用 adb 命令将 trace 文件导出到电脑：
 adb pull /sdcard/shixintrace.trace /tmp
 　　使用代码生成 trace 方式的好处是容易控制追踪的开始和结束，缺点就是步骤稍微多了一点。
