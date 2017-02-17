@@ -17,10 +17,13 @@ Debug.startMethodTracing("shixintrace");//开始 trace，保存文件到 "/sdcar
 Debug.stopMethodTracing();//结束
 ```
 代码很简单，当你调用开始代码的时候，系统会生产 trace 文件，并且产生追踪数据，当你调用结束代码时，会将追踪数据写入到 trace 文件中。<br>
-下一步使用 adb 命令将 trace 文件导出到电脑：
+下一步使用 adb 命令将 trace 文件导出到电脑：<br>
 adb pull /sdcard/shixintrace.trace /tmp
 
-使用代码生成 trace 方式的好处是容易控制追踪的开始和结束，缺点就是步骤稍微多了一点。
+使用代码生成 trace 方式的好处是容易控制追踪的开始和结束，缺点就是步骤稍微多了一点。<br>
+有大神写了一个简单blog**
+移动性能测试 TraceView 自动化抓取方案实践https://testerhome.com/topics/3505?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io <br><br>
+可以尝试特定抓取指定的函数与类，但是限定为android5.0以上才支持， 而且对webview不能统计**
 　
 ## 使用 Android Studio 生成 trace 文件
 Android Studio 内置的 Android Monitor 可以很方便的生成 trace 文件到电脑。<br>
