@@ -21,9 +21,9 @@ Debug.stopMethodTracing();//结束
 adb pull /sdcard/shixintrace.trace /tmp
 
 使用代码生成 trace 方式的好处是容易控制追踪的开始和结束，缺点就是步骤稍微多了一点。<br>
-有大神写了一个简单blog**
-移动性能测试 TraceView 自动化抓取方案实践https://testerhome.com/topics/3505?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io <br><br>
-可以尝试特定抓取指定的函数与类，但是限定为android5.0以上才支持， 而且对webview不能统计**
+有大神写了一个简单blog **移动性能测试 TraceView 自动化抓取方案实践https://testerhome.com/topics/3505?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io <br><br>
+可以尝试特定抓取指定的函数与类，但是限定为android5.0以上才支持，*
+最终目标为：抓取对应数据，存放到数据库，这样在今后的迭代中可进行周期性比对，从而体现出函数优化情况 ！！大赞**
 　
 ## 使用 Android Studio 生成 trace 文件
 Android Studio 内置的 Android Monitor 可以很方便的生成 trace 文件到电脑。<br>
@@ -42,13 +42,13 @@ Traceview 中信息太多，想要查找可以使用最下方的 find：<br>
 　　
 但是目前 DDMS 中的 TraceView 有 bug，find 无法使用，许多人给 Google 提 issue 提了 5 年也没有解决 <br>
 　
-（图片截自：https://code.google.com/p/android/issues/detail?id=38825）<br>
-*解决办法就是直接使用 SDK 中的 TraceView: *<br>
+图片截自：https://code.google.com/p/android/issues/detail?id=38825）<br>
+**解决办法就是直接使用 SDK 中的 TraceView: **<br>
 使用命令直接打开 SDK 中的 TraceView :<br>
 /Users/xinmin/Library/Android/sdk/tools/traceview /Users/xinmin/codes/an********17_14.59.trace <br>
 　　
 然后就可以愉快的搜索了。。。。　　
-　　虽然提示 deprecated，但起码在搜索上还是比 Android Device Monitor 中好用。<br>
+虽然提示 deprecated，但起码在搜索上还是比 Android Device Monitor 中好用。<br>
   
 还有一个问题就是DDMS的traceview放大后就很难缩小了，在使用上很不方便，只能放大时间轴不能缩小，造成没办法回复初始状态。<br>
 发现了两种方法可以，分享一下：
@@ -61,6 +61,8 @@ Traceview 中信息太多，想要查找可以使用最下方的 find：<br>
 在发现某个页面或者操作会卡顿时，可以使用 TraceView 定位问题代码。
 比如启动，加载图片列表卡顿等情况。
 
-##总结
-　　Android SDK 中提供了许多工具帮助我们发现问题，在学会使用工具之余，还是要加强自身对性能要求的意识。
+
+## 总结
+
+Android SDK 中提供了许多工具帮助我们发现问题，在学会使用工具之余，还是要加强自身对性能要求的意识。
 
