@@ -5,7 +5,7 @@
 TraceView 是 Android SDK 中内置的一个工具，它可以加载 trace文件，用图形的形式展示代码的执行时间、次数及调用栈，便于我们分析。<br>
 trace 文件是 log 信息文件的一种，可以通过代码，Android Studio，或者 DDMS 生成。<br>
 
-　　生成 trace 文件有三种方法：<br>
+生成 trace 文件有三种方法：<br>
 1. 使用代码 <br>
 2. 使用 Android Studio =》使用过程中有点卡顿<br>
 3. 使用 DDMS <br>
@@ -16,23 +16,25 @@ Debug.startMethodTracing("shixintrace");//开始 trace，保存文件到 "/sdcar
 // ...
 Debug.stopMethodTracing();//结束
 ```
-代码很简单，当你调用开始代码的时候，系统会生产 trace 文件，并且产生追踪数据，当你调用结束代码时，会将追踪数据写入到 trace 文件中。
-　　下一步使用 adb 命令将 trace 文件导出到电脑：
+代码很简单，当你调用开始代码的时候，系统会生产 trace 文件，并且产生追踪数据，当你调用结束代码时，会将追踪数据写入到 trace 文件中。<br>
+下一步使用 adb 命令将 trace 文件导出到电脑：
 adb pull /sdcard/shixintrace.trace /tmp
-　　使用代码生成 trace 方式的好处是容易控制追踪的开始和结束，缺点就是步骤稍微多了一点。
-　　2.使用 Android Studio 生成 trace 文件
-　　Android Studio 内置的 Android Monitor 可以很方便的生成 trace 文件到电脑。
-　　在 CPU 监控的那栏会有一个闹钟似的的按钮，未启动应用时是灰色：
-　　启动应用后，这个按钮会变亮，点击后开始追踪，相当于代码调用 startMethodTracing：
 
-　　当要结束追踪时再次点击这个按钮，就会生成 trace 文件了。
-　　生成 trace 后 Android Studio 自动加载的 traceview 图形如下：
-　　
-　　从这个图可以大概了解一些方法的执行时间、次数以及调用关系，也可以搜索过滤特定的内容。
-　　左上角可以切换不同的线程，这其实也是直接用 Android Studio 查看 trace 文件的缺点：无法直观地对比不同线程的执行时间。
-　　鼠标悬浮到黄色的矩形上，会显示对应方法的开始、结束时间，以及自己占用和调用其他方法占用的时间比例：
+使用代码生成 trace 方式的好处是容易控制追踪的开始和结束，缺点就是步骤稍微多了一点。
+　
+ ## 使用 Android Studio 生成 trace 文件
+Android Studio 内置的 Android Monitor 可以很方便的生成 trace 文件到电脑。
+在 CPU 监控的那栏会有一个闹钟似的的按钮，未启动应用时是灰色：
+启动应用后，这个按钮会变亮，点击后开始追踪，相当于代码调用 startMethodTracing：
 
-　　3.使用 DDMS 生成 trace 文件
+当要结束追踪时再次点击这个按钮，就会生成 trace 文件了。
+生成 trace 后 Android Studio 自动加载的 traceview 图形如下：
+
+从这个图可以大概了解一些方法的执行时间、次数以及调用关系，也可以搜索过滤特定的内容。
+左上角可以切换不同的线程，这其实也是直接用 Android Studio 查看 trace 文件的缺点：无法直观地对比不同线程的执行时间。
+鼠标悬浮到黄色的矩形上，会显示对应方法的开始、结束时间，以及自己占用和调用其他方法占用的时间比例：
+
+　## 使用 DDMS 生成 trace 文件
 　　DDMS 即 Dalvik Debug Monitor Server ，是 Android 调试监控工具，它为我们提供了截图，查看 log，查看视图层级，查看内存使用等功能，可以说是如今 Android Studio 中内置的 Android Monitor 的前身。
 　　双击 shift 弹出全局搜索，搜索 "Android Device Monitor"：
 　　
@@ -75,9 +77,8 @@ Children：选中方法调用的方法
 　　
 　　虽然提示 deprecated，但起码在搜索上还是比 Android Device Monitor 中好用。
 　　TraceView 的使用场景
-　　在发现某个页面或者操作会卡顿时，可以使用 TraceView 定位问题代码。
-　　比如启动，加载图片列表卡顿等情况。
+在发现某个页面或者操作会卡顿时，可以使用 TraceView 定位问题代码。
+比如启动，加载图片列表卡顿等情况。
 　　总结
 　　Android SDK 中提供了许多工具帮助我们发现问题，在学会使用工具之余，还是要加强自身对性能要求的意识。
-　　https://developer.android.com/training/articles/perf-tips.html
-　　还有一点，不要过早优化！
+
