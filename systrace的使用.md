@@ -1,6 +1,7 @@
 #安装使用
 根据官网https://developer.android.com/studio/profile/systrace.html的说明
-mac电脑的路径是/Users/xinmin/Library/Android/sdk/platform-tools/systrace， 然后运行命令的时候发现下面的错误
+mac电脑的路径是/Users/xinmin/Library/Android/sdk/platform-tools/systrace，
+然后运行命令./systrace.py --time=10 -o mynewtrace.html sched gfx view wm 的时候发现下面的错误
 ```
 Traceback (most recent call last):
   File "./systrace.py", line 48, in <module>
