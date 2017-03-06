@@ -63,8 +63,8 @@ mServedView与mNextServiedView都是空值null， 所以怀疑是有逻辑对这
         scheduleCheckFocusLocked(view);
     }
 ```
-其中   mNextServedView = view;进行赋值，应该对输入法弹框对象进行服务的对象但是是@Hide的方法
-所以不能在SDK的接口中直接调用，需要在反射的方法来验证我们的想法是否可行
+其中   mNextServedView = view;进行赋值，应该对输入法弹框对象进行服务的对象, 但是由于是@Hide的方法
+所以**不能在SDK的接口中直接调用**，需要在**反射**的方法来验证我们的想法是否可行
 所以在WebView的
 
 ```
@@ -127,3 +127,10 @@ public boolean onTouchEvent(MotionEvent event) {
 有clearFocus的操作，所以判断发出清除操作，导致webview的焦点进行获得然后被失去，
 去掉这行代码就可以了
     
+### 总结：
+相关联的类：
+1. android.view.inputmethod.InputMethodManager
+2. android.view.View/ViewGroup
+3. android.webkit.WebView
+
+解决这个问题采用从framework层反推(和反射)的方法找到解决方案，希望在以后解决问题中有借鉴意义
