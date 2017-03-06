@@ -62,4 +62,5 @@ mServedView与mNextServiedView都是空值， 所以怀疑是有逻辑对这2个
         scheduleCheckFocusLocked(view);
     }
 ```
-其中   mNextServedView = view;进行
+其中   mNextServedView = view;进行赋值，应该对输入法弹框对象进行服务的对象但是是@Hide的方法所以
+    
