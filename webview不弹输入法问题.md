@@ -98,10 +98,13 @@ mServedView与mNextServiedView都是空值null， 所以怀疑是有逻辑对这
 进行反射的验证，保证在webview点击的时候可以调用到正常的View，所以在webview中进行上面的反射处理
 实验证明的确可以正常显示输入法的， 但是是谁对mNextServedView 或对mServedView进行清理工作呢
 
-只需要加入断点调试即可，如图所示
-![](https://github.com/qixinmin/docs/blob/master/pics/clearStack.png)
+只需要加入断点调试即可，如图所示, 
+
+![调用堆栈](https://github.com/qixinmin/docs/blob/master/pics/clearStack.png)
+
 
 在函数
+
 ```
 @Override
     public void onPause() {
@@ -114,6 +117,9 @@ mServedView与mNextServiedView都是空值null， 所以怀疑是有逻辑对这
         mViewPager.setCurrentItem(0);
         urlInputView.clearFocus();
     }
-```有clearFocus的操作，所以判断发出清除操作，导致webview的焦点进行获得然后被失去，
+    
+``` 
+
+有clearFocus的操作，所以判断发出清除操作，导致webview的焦点进行获得然后被失去，
 去掉这行代码就可以了
     
