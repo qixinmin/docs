@@ -99,7 +99,7 @@ mServedView与mNextServiedView都是空值null， 所以怀疑是有逻辑对这
 实验证明的确可以正常显示输入法的， 但是是谁对mNextServedView 或对mServedView进行清理工作呢
 
 只需要加入断点调试即可，如图所示
-![](https://github.com/qixinmin/docs/blob/master/pics/%E8%B0%83%E7%94%A8%E5%A0%86%E6%A0%88.png)
+![](https://github.com/qixinmin/docs/blob/master/pics/clearStack.png)
 
 在函数
 ```
