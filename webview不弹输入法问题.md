@@ -19,6 +19,7 @@ public boolean showSoftInput(View view, int flags, ResultReceiver resultReceiver
     }
 ```
 问题很奇怪， 如下图，
+![调用堆栈](https://github.com/qixinmin/docs/blob/master/pics/webview_pop_stack.png)
 是一个正常的调用关系，但是在
 ```
  public boolean showSoftInput(View view, int flags, ResultReceiver resultReceiver) {
@@ -96,7 +97,10 @@ mServedView与mNextServiedView都是空值null， 所以怀疑是有逻辑对这
 ```
 进行反射的验证，保证在webview点击的时候可以调用到正常的View，所以在webview中进行上面的反射处理
 实验证明的确可以正常显示输入法的， 但是是谁对mNextServedView 或对mServedView进行清理工作呢
-只需要加入断点调试即可
+
+只需要加入断点调试即可，如图所示
+![](https://github.com/qixinmin/docs/blob/master/pics/%E8%B0%83%E7%94%A8%E5%A0%86%E6%A0%88.png)
+
 在函数
 ```
 @Override
