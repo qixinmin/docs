@@ -66,7 +66,9 @@ mServedView与mNextServiedView都是空值null， 所以怀疑是有逻辑对这
 其中   mNextServedView = view;进行赋值，应该对输入法弹框对象进行服务的对象但是是@Hide的方法
 所以不能在SDK的接口中直接调用，需要在反射的方法来验证我们的想法是否可行
 所以在WebView的
-```public boolean onTouchEvent(MotionEvent event) {
+
+```
+public boolean onTouchEvent(MotionEvent event) {
   Log2345.d("test", "start");
         Class<?> c;
         try {
@@ -94,7 +96,9 @@ mServedView与mNextServiedView都是空值null， 所以怀疑是有逻辑对这
             e.printStackTrace();
         }
 //                    }
+
 ```
+
 进行反射的验证，保证在webview点击的时候可以调用到正常的View，所以在webview中进行上面的反射处理
 实验证明的确可以正常显示输入法的， 但是是谁对mNextServedView 或对mServedView进行清理工作呢
 
